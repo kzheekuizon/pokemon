@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { PokesService } from '../pokes.service';
 
+import { Pokemon, PokeResult } from '../pokemon';
+//import { POKEMONS } from '../mock.pokemon';
+
+import { Observable, of } from 'rxjs';
+
+
 @Component({
   selector: 'app-pokemons',
   templateUrl: './pokemons.component.html',
@@ -9,16 +15,17 @@ import { PokesService } from '../pokes.service';
 
 export class PokemonsComponent implements OnInit {
 
-  listResponse : any;
+  pokemons: PokeResult[];
 
   constructor(private pokeService: PokesService) { }
 
-  getPokemon(): void {
-    this.pokeService.getPokemons().subscribe(pokemons => this.listResponse = pokemons.results);
+  ngOnInit() {
+    this.getPokemons();
+    
   }
 
-  ngOnInit() {
-    this.getPokemon(); 
+  getPokemons() {
+    return this.pokeService.getPokemons().subscribe((pokemons: Pokemon) => this.pokemons = pokemons.results);   
   }
 
 }
