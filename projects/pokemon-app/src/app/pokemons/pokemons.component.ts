@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokesService } from '../pokes.service';
 
 import { Pokemon, PokeResult } from '../pokemon';
+
 //import { POKEMONS } from '../mock.pokemon';
 
 import { Observable, of } from 'rxjs';
@@ -21,7 +22,6 @@ export class PokemonsComponent implements OnInit {
 
   ngOnInit() {
     this.getPokemons();
-    
   }
 
   getPokemons() {

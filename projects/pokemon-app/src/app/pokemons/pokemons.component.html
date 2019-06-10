@@ -1,16 +1,12 @@
 <div>
-    <div class="Pokedex">
+    <div class="page-header">
       <h1>Pokédex <small class="pull-right"></small></h1>
       <!-- <h2 *ngIf="pokemonType"><span class="label type-{{pokemonType | lowercase}}">{{pokemonType}}</span></h2> -->
     </div>
    <div *ngFor="let pokemon of pokemons" class="panel-heading">
-      <div class="list">
-        {{pokemon.name}}
-        <app-pokemon-detail [name]=pokemon.name></app-pokemon-detail>
-      </div>     
+      <app-pokemon-detail [name]=pokemon.name></app-pokemon-detail>    
    </div>
   </div>
-
 
 
 

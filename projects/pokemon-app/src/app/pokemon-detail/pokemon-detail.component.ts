@@ -9,23 +9,21 @@ import { PokeDetail } from '../pokemon' ;
 })
 
 export class PokemonDetailComponent implements OnInit {
-  @Input() name: string;
+  @Input()
+   name: string;
 
-  image: string;
-  p: number = 1;
+   detail: PokeDetail;
 
   constructor(private pokeService: PokesService) { }
 
   ngOnInit() {
-   this.getImage(this.name);
+   this.getDetail(this.name);
   }
 
-  getImage(name: string) {
-    this.pokeService.getImage(name).subscribe(detail => {
-      this.image = detail.sprites.front_default;
-      console.log(this.image);
+  getDetail(name: string) {
+    this.pokeService.getDetail(name).subscribe(detail => {
+      this.detail = detail;
+      console.log(this.detail);
     });
-    
   }
-
 }

@@ -22,30 +22,35 @@ export interface PokeDetail {
     id: number;
     is_default: boolean;
     location_area_encounter: string;
-    moves: PokeMove[];
+    moves: PokeMoves[];
     name: string;
     order: number;
     species: PokeSpecies[];
     sprites: PokeSprite;
-    stats: PokeStat[];
-    types: PokeType[]; 
+    stats: PokeStats[];
+    types: PokeTypes[]; 
     weight: number;
 }
 
 export interface PokeAbility {
-
+    ability: string;
+    is_hidden: boolean;
+    slot: number;
 }
 
 export interface PokeForm { 
-
+    name: string;
+    url: string;
 }
 
 export interface PokeGame {
-    
+    game_index: number;
+    version: PokeVersion;
 }
 
-export interface PokeMove {
-
+export interface PokeMoves {
+    move: PokeMove;
+    version_group_details: PokeGrpDtl[];
 }
 
 export interface PokeSpecies {
@@ -64,10 +69,49 @@ export interface PokeSprite {
     front_shiny_female: string;
 }
 
-export interface PokeStat {
+export interface PokeStats {
+    base_stat: number;
+    effort: number;
+    stat: PokeStat;
+}
 
+export interface PokeTypes {
+    slot: number;
+    type: PokeType;
+}
+
+export interface PokeVersion {
+    name: string;
+    url: string;
+}
+
+export interface PokeMove {
+    name: string;
+    url: string;
+}
+
+export interface PokeGrpDtl {
+    level_learned_at: number;
+    move_learn_method: PokeLearnMethod;
+    version_group: PokeVersionGrp;
+}
+
+export interface PokeLearnMethod {
+    name: string;
+    url: string;
+}
+
+export interface PokeVersionGrp {
+    name: string;
+    url: string;
+}
+
+export interface PokeStat {
+    name: string;
+    url: string;
 }
 
 export interface PokeType {
-
+    name: string;
+    url: string;
 }

@@ -1,4 +1,4 @@
-  .Pokedex {
+  .page-header {
     color: #ccc;
   }
   
@@ -10,19 +10,4 @@
     border: 1px solid #ff99bb;
   }
 
-  .list {
-   display: inline-block;
-   width: 180px;
-   height: 20px;
-   padding: 5px;
-   background-color: #ff99bb;
-   border: 1px solid #ffffff;
-   color: #ffffff;
-   text-transform: capitalize;
-   font-size: 0.875em; /* 14px/16=0.875em */
-   font-style: Calibri;
-   /* display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   justify-content: space-evenly; */
-  }
+  
