@@ -3,9 +3,8 @@ import { PokesService } from '../pokes.service';
 
 import { Pokemon, PokeResult } from '../pokemon';
 
-//import { POKEMONS } from '../mock.pokemon';
-
 import { Observable, of } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -18,14 +17,21 @@ export class PokemonsComponent implements OnInit {
 
   pokemons: PokeResult[];
 
-  constructor(private pokeService: PokesService) { }
+  constructor(
+    private pokeService: PokesService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getPokemons();
   }
 
-  getPokemons() {
-    return this.pokeService.getPokemons().subscribe((pokemons: Pokemon) => this.pokemons = pokemons.results);   
+  getPokemons() :void {
+    this.route.params.subscribe(parameter => {
+      console.log(parameter.page);
+
+      this.pokeService.getPokemons(parameter.page).subscribe((pokemons: Pokemon) => this.pokemons = pokemons.results);   
+    })
+    
   }
 
 }

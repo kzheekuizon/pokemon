@@ -1,14 +1,14 @@
-<div class="row" *ngIf="detail">
+ <div class="row" *ngIf="detail">
     <div class="panel-heading">
         <div class="name">{{detail.name | uppercase}}</div>
         <div class="id">#{{detail.id | number: '3.' }}</div>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" routerLink="/dashboard/{{detail.name}}">
          <div class="imgdiv">
            <img [src]="detail.sprites.front_default">
          </div>
     </div>
     <div class="panel-footer">
-         <div *ngFor="let type of detail.types" class="type">{{type.type.name | lowercase }}</div>
+         <div *ngFor="let type of detail.types" class="type {{type.type.name}}">{{type.type.name | lowercase }}</div>
     </div>
- </div>      
+  </div>      

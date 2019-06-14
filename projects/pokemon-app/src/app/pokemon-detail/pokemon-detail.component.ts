@@ -10,8 +10,8 @@ import { PokeDetail } from '../pokemon' ;
 
 export class PokemonDetailComponent implements OnInit {
   @Input()
-   name: string;
 
+   name: string;
    detail: PokeDetail;
 
   constructor(private pokeService: PokesService) { }
@@ -23,7 +23,7 @@ export class PokemonDetailComponent implements OnInit {
   getDetail(name: string) {
     this.pokeService.getDetail(name).subscribe(detail => {
       this.detail = detail;
-      console.log(this.detail);
+      // console.log(this.detail);
     });
   }
 }

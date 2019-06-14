@@ -1,0 +1,8 @@
+.pageheader {
+    display: flex;
+    justify-content: center;
+}
+.pagenumber {
+    flex-direction: row;
+    margin: 10px 10px;
+}

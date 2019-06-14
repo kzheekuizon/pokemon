@@ -1,8 +1,8 @@
 <div>
     <div class="page-header">
       <h1>Pokédex <small class="pull-right"></small></h1>
-      <!-- <h2 *ngIf="pokemonType"><span class="label type-{{pokemonType | lowercase}}">{{pokemonType}}</span></h2> -->
     </div>
+      <app-pagination></app-pagination>
    <div *ngFor="let pokemon of pokemons" class="panel-heading">
       <app-pokemon-detail [name]=pokemon.name></app-pokemon-detail>    
    </div>

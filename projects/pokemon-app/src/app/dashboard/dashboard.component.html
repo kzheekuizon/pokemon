@@ -1,9 +1,29 @@
-<!-- <h3>Top Pokemon</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let pokemon of Pokemons" class="col-1-4"
-      routerLink="detail.id">
-    <div class="module pokemon">
-      <h4>{{pokemon.name}}</h4>
+<div class="container-fluid">
+    <div class ="page-header">
+        <h1>
+          #{{detail.id | number: '3.'}}
+          <span class="label labe-primary pull-right">{{detail.name | titlecase}}</span>
+        </h1>
     </div>
-  </a>
-</div> -->
+    <div class="row">
+        <div class="col-md 6">
+          <div class="imgdiv">
+            <img [src]="detail.sprites.front_default">
+          </div>
+        </div>
+        <div class="col-md 6">
+          <ul class="nav nav-tabs nav-justified">
+              <li class="active">
+                 <!-- <a routerLink="/dashboard/{{detail.name}}"></a> -->
+              </li>
+          </ul>
+          <div class="panel-footer">
+            <div *ngFor="let type of detail.types" class="type {{type.type.name}}">Type: {{type.type.name | lowercase }}</div>
+            <div class="height">Height: {{detail.height}}</div>
+            <div class="weight">Weight: {{detail.weight}}</div>
+            <div *ngFor="let ability of detail.abilities" class="ability">Ability: {{ability.ability.name}}</div>
+            <div *ngFor="let move of detail.moves" class="move">Moves: {{move.move.name}}</div>
+          </div>
+        </div>
+    </div>
+</div>

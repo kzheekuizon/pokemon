@@ -13,7 +13,7 @@ export interface Pokemon {
 }
 
 export interface PokeDetail {
-    abilities: PokeAbility[];
+    abilities: PokeAbilities[];
     base_experience: number;
     forms: PokeForm[];
     game_indices: PokeGame[];
@@ -32,8 +32,8 @@ export interface PokeDetail {
     weight: number;
 }
 
-export interface PokeAbility {
-    ability: string;
+export interface PokeAbilities {
+    ability: PokeAbility;
     is_hidden: boolean;
     slot: number;
 }
@@ -102,6 +102,11 @@ export interface PokeLearnMethod {
 }
 
 export interface PokeVersionGrp {
+    name: string;
+    url: string;
+}
+
+export interface PokeAbility {
     name: string;
     url: string;
 }
