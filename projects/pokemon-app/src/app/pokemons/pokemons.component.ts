@@ -27,7 +27,7 @@ export class PokemonsComponent implements OnInit {
 
   getPokemons() :void {
     this.route.params.subscribe(parameter => {
-      console.log(parameter.page);
+      // console.log(parameter.page);
 
       this.pokeService.getPokemons(parameter.page).subscribe((pokemons: Pokemon) => this.pokemons = pokemons.results);   
     })

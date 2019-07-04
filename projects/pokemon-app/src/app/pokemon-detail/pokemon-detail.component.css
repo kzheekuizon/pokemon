@@ -31,6 +31,7 @@
   .panel-body .imgdiv {
     display: flex;
     justify-content: center;
+    cursor: pointer;
   }
   
   .panel-footer {

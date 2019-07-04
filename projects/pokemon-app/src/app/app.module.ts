@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 // import { NgxPaginateModule } from 'ngx-paginate';
 // import { NgxPaginationModule } from 'ngx-pagination';
-import {MatPaginatorModule} from '@angular/material/paginator'; 
+// import {MatPaginatorModule} from '@angular/material/paginator'; 
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -13,10 +13,9 @@ import { PokemonsComponent } from './pokemons/pokemons.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PokedexComponent } from './pokedex/pokedex.component';
+// import { PokedexComponent } from './pokedex/pokedex.component';
 import { PaginationComponent } from './pagination/pagination.component';
-// import { PaginationComponent } from './pagination/pagination.component';
+
 
 
 @NgModule({
@@ -25,18 +24,13 @@ import { PaginationComponent } from './pagination/pagination.component';
     PokemonsComponent,
     PokemonDetailComponent,
     DashboardComponent,
-    NavbarComponent,
-    PokedexComponent,
-    PaginationComponent,
-    // PaginationComponent
+    // PokedexComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    // NgxPaginateModule,
-    // NgxPaginationModule,
-    // MatPaginatorModule,
     AppRoutingModule
   ],
   providers: [],

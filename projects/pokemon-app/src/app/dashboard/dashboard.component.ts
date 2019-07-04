@@ -31,6 +31,7 @@ export class DashboardComponent implements OnInit {
    this.pokeService.getDetail(name).subscribe(detail => {
      this.detail = detail;
      console.log(this.detail);
+     console.log(this.detail.types)
    });
  }
 }

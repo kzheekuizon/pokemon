@@ -5,4 +5,14 @@
 .pagenumber {
     flex-direction: row;
     margin: 10px 10px;
+    cursor: pointer;
+    color: 	#DEB887;
+}
+
+.pagenumber:hover {background-color: #FFDEAD}
+
+.pagenumber:active {
+  background-color: #800000;
+  box-shadow: 0 5px #800000;
+  transform: translateY(4px);
 }

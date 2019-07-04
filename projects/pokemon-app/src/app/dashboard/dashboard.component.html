@@ -1,29 +1,33 @@
 <div class="container-fluid">
-    <div class ="page-header">
-        <h1>
-          #{{detail.id | number: '3.'}}
-          <span class="label labe-primary pull-right">{{detail.name | titlecase}}</span>
-        </h1>
+  <input type="button" value=" < Previous" onclick="history.back(-1)" class="buttonBg"/>
+  <div class ="page-header">
+    <h1>
+      #{{detail.id | number: '3.'}}
+      {{detail.name | titlecase}}
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-md 6">
+      <div class="imgdiv">
+         <img [src]="detail.sprites.front_default">
+      </div>
     </div>
-    <div class="row">
-        <div class="col-md 6">
-          <div class="imgdiv">
-            <img [src]="detail.sprites.front_default">
+    <div class="panel-footer">
+      <div *ngFor="let type of detail.types" class="type {{type.type.name}}">
+        <div> {{type.type.name | lowercase }} </div> 
+      </div>
+          <p>
+            <strong>Height: {{detail.height}}    </strong>
+            <strong>Weight: {{detail.weight}}</strong>
+          </p>
+          <div>
+            <strong>Abilities:</strong>
+            <div *ngFor="let ability of detail.abilities" class="ability">{{ability.ability.name}}</div>
           </div>
-        </div>
-        <div class="col-md 6">
-          <ul class="nav nav-tabs nav-justified">
-              <li class="active">
-                 <!-- <a routerLink="/dashboard/{{detail.name}}"></a> -->
-              </li>
-          </ul>
-          <div class="panel-footer">
-            <div *ngFor="let type of detail.types" class="type {{type.type.name}}">Type: {{type.type.name | lowercase }}</div>
-            <div class="height">Height: {{detail.height}}</div>
-            <div class="weight">Weight: {{detail.weight}}</div>
-            <div *ngFor="let ability of detail.abilities" class="ability">Ability: {{ability.ability.name}}</div>
-            <div *ngFor="let move of detail.moves" class="move">Moves: {{move.move.name}}</div>
+          <div>
+            <p><strong>Moves:</strong></p>
+            <div *ngFor="let move of detail.moves" class="move">{{move.move.name}}</div>
           </div>
-        </div>
     </div>
+  </div>
 </div>
