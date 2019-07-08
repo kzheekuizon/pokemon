@@ -20,6 +20,34 @@
   transform: translateY(4px);
 }
 
+.ability {
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  font: Calibri;
+  color: #666;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 1px;
+  padding: 2px 2px;
+}
+
+.move {
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  font: Calibri;
+  color: #666;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-bottom: 1px;
+  padding: 2px 2px;
+}
+
+.page-header .id {
+  flex: 1;
+}
+
 /* .page-header {
   display: inline-block;
   flex-direction: row;
@@ -28,10 +56,6 @@
   font-size: 15px;
   font: Calibri;
 } */
-
-.page-header .id {
-  flex: 1;
-}
 
 .type {
     font-size: 18px;

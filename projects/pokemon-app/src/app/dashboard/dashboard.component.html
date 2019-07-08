@@ -1,16 +1,19 @@
 <div class="container-fluid">
   <input type="button" value=" < Previous" onclick="history.back(-1)" class="buttonBg"/>
-  <div class ="page-header">
+  <div *ngIf="detail" class ="page-header">
     <h1>
       #{{detail.id | number: '3.'}}
       {{detail.name | titlecase}}
     </h1>
   </div>
-  <div class="row">
+  <div *ngIf="detail"  class="row">
     <div class="col-md 6">
-      <div class="imgdiv">
+      <div class="imgdiv" *ngIf="detail.sprites.front_default; else NotAvailable">
          <img [src]="detail.sprites.front_default">
       </div>
+      <ng-template #NotAvailable>
+        <span>Pokemon</span>
+      </ng-template>
     </div>
     <div class="panel-footer">
       <div *ngFor="let type of detail.types" class="type {{type.type.name}}">
